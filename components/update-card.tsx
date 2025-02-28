@@ -1,27 +1,30 @@
 import {
   Card,
   CardContent,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 
 export default function UpdateCard() {
-  const date = "10-2-2024";
-  const topics = "React, TypeScript, TailwindCSS, Next.js";
-
   return (
-    <Card className="h-auto w-11/12">
+    <Card className="h-auto w-11/12 hover:scale-105 transition-all duration-500 ease-in-out">
       <CardHeader>
-        <CardTitle className="text-2xl">{date}</CardTitle>
+        <CardTitle className="text-2xl"></CardTitle>
+        <CardDescription>Key Repo: </CardDescription>
       </CardHeader>
-      <CardContent></CardContent>
-      <CardFooter className="flex flex-col gap-y-2 items-start">
+      <CardContent>
         <p>
-          Topics: <span className="text-slate-500">{topics}</span>
+          Task: <span className="text-slate-500"></span>
         </p>
         <p>
-          Repo: <span className="text-slate-500"></span>
+          Work Done: <span className="text-slate-500"></span>
+        </p>
+      </CardContent>
+      <CardFooter>
+        <p>
+          Next Steps: <span className="text-slate-500"></span>
         </p>
       </CardFooter>
     </Card>

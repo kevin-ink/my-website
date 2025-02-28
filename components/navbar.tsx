@@ -59,16 +59,7 @@ export default function Navbar() {
         href="#about"
         scroll
       >
-        about
-      </Link>
-      <Link
-        className={`${
-          animateLinks ? "md:animate-[transitfade_3s]" : ""
-        } hover:text-black`}
-        href="#contact"
-        scroll
-      >
-        contact me
+        about me
       </Link>
       <Link
         className={`${

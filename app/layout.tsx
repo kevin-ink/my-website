@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lexend.className} antialiased h-screen w-screen max-w-full bg-slate-900`}
+        className={`${lexend.className} antialiased h-auto w-screen max-w-full bg-slate-900`}
       >
         {children}
       </body>
