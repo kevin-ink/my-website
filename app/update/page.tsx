@@ -16,25 +16,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { postUpdate } from "../actions";
 import { useState } from "react";
-
-export const formSchema = z
-  .object({
-    task: z.string().min(3).max(200),
-    next_steps: z.string().min(3).max(200),
-    repo: z.string().max(200),
-    repo_url: z.string().max(200),
-    work_done: z.string().min(3).max(200),
-    password: z.string().min(8).max(200),
-  })
-  .refine(
-    (data) =>
-      (data.repo === "" && data.repo_url === "") ||
-      (data.repo !== "" && data.repo_url !== ""),
-    {
-      message: "Both repo and repo URL must be filled or both must be empty",
-      path: ["repo_url"],
-    }
-  );
+import { formSchema } from "../types";
 
 export default function UpdateForm() {
   const [isPending, setIsPending] = useState(false);

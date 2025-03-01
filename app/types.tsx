@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 export interface UpdateProps {
   id: string;
   task: string;
@@ -7,3 +9,22 @@ export interface UpdateProps {
   repo_name: string;
   repo_url: string;
 }
+
+export const formSchema = z
+  .object({
+    task: z.string().min(3).max(200),
+    next_steps: z.string().min(3).max(200),
+    repo: z.string().max(200),
+    repo_url: z.string().max(200),
+    work_done: z.string().min(3).max(200),
+    password: z.string().min(8).max(200),
+  })
+  .refine(
+    (data) =>
+      (data.repo === "" && data.repo_url === "") ||
+      (data.repo !== "" && data.repo_url !== ""),
+    {
+      message: "Both repo and repo URL must be filled or both must be empty",
+      path: ["repo_url"],
+    }
+  );

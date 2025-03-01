@@ -7,8 +7,14 @@ export default function Projects() {
         featured projects
       </h1>
       <div className="w-full h-auto flex flex-row flex-wrap p-2 gap-4 justify-center">
-        <ProjectCard cardTitle="3D Reaction Time Minigame" />
-        <ProjectCard cardTitle="Digital Humanities Web Showcase" />
+        <ProjectCard
+          cardTitle="3D Reaction Time Minigame"
+          cardImageUrl="/urf.png"
+          imgWidth={1869}
+          imgHeight={939}
+          animatedUrl={"/urf_demo.gif"}
+        />
+        <ProjectCard cardTitle="Digital Humanities Showcase Website" />
         <ProjectCard cardTitle="CoffeePls: a Platform for Coffee Enthusiasts" />
       </div>
       <p className="text-slate-300 text-center">
