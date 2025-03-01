@@ -1,7 +1,7 @@
 "use server";
 
 import { neon } from "@neondatabase/serverless";
-import { formSchema } from "./update/page";
+import { formSchema } from "./types";
 import { z } from "zod";
 
 const DATABASE_URL = process.env.DATABASE_URL;
