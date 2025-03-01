@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <div className="h-auto mb-10 mx-auto w-11/12 xl:w-7/12 2xl:w-6/12 flex flex-col items-center">
       <h1 className="text-3xl relative text-white" id="contact">
-        contact me at
+        reach me at
       </h1>
       <a
         href="mailto:kevinsli0902@gmail.com"

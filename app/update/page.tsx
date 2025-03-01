@@ -14,35 +14,59 @@ import {
 } from "@/components/ui/form";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { postUpdate } from "../actions";
+import { useState } from "react";
 
-const formSchema = z.object({
-  task: z.string().min(10).max(200),
-  next_steps: z.string().min(10).max(200),
-  repo: z.string().min(10).max(200),
-  repo_url: z.string().min(10).max(200),
-  work_done: z.string().min(10).max(200),
-  password: z.string().min(10).max(200),
-});
+export const formSchema = z
+  .object({
+    task: z.string().min(3).max(200),
+    next_steps: z.string().min(3).max(200),
+    repo: z.string().max(200),
+    repo_url: z.string().max(200),
+    work_done: z.string().min(3).max(200),
+    password: z.string().min(8).max(200),
+  })
+  .refine(
+    (data) =>
+      (data.repo === "" && data.repo_url === "") ||
+      (data.repo !== "" && data.repo_url !== ""),
+    {
+      message: "Both repo and repo URL must be filled or both must be empty",
+      path: ["repo_url"],
+    }
+  );
 
 export default function UpdateForm() {
+  const [isPending, setIsPending] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      password: "",
       next_steps: "",
       task: "",
-      repo: "",
       work_done: "",
+      repo: "",
+      repo_url: "",
+      password: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsPending(true);
+    const error = await postUpdate(values);
+    if (error) {
+      console.log(error);
+      form.setError("root", { type: "manual", message: "Failed to submit." });
+    } else {
+      alert("Submitted successfully!");
+    }
+    form.reset();
+    setIsPending(false);
   }
 
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
-      <div className="w-full max-w-sm">
+      <div className="w-full max-w-md">
         <Card className="bg-slate-400 border-transparent w-full p-4">
           <h1 className="text-red-800">This form is for admin use only.</h1>
           <Form {...form}>
@@ -119,13 +143,15 @@ export default function UpdateForm() {
                   <FormItem>
                     <FormLabel>Admin Password</FormLabel>
                     <FormControl>
-                      <Input className="border-2" {...field} />
+                      <Input type="password" className="border-2" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <Button type="submit">Submit</Button>
+              <Button disabled={isPending} type="submit">
+                Submit
+              </Button>
             </form>
           </Form>
         </Card>

@@ -1,6 +1,12 @@
-import UpdateCard from "@/components/update-card";
+"use server";
 
-export default function Journey() {
+import UpdateCard from "@/components/update-card";
+import { getUpdates } from "@/app/actions";
+import { UpdateProps } from "@/app/types";
+
+export default async function Journey() {
+  const updates = await getUpdates();
+
   return (
     <div className="h-auto mt-2 mx-auto w-11/12 xl:w-7/12 2xl:w-6/12">
       <div className="flex flex-row justify-between">
@@ -13,7 +19,11 @@ export default function Journey() {
         until I land my entry role.
       </p>
       <div className="flex flex-col gap-y-2 items-center">
-        <UpdateCard />
+        {updates.map((update) => (
+          <div key={update.id} className="w-full">
+            <UpdateCard update={update as UpdateProps} />
+          </div>
+        ))}
       </div>
       <div className="h-[80vh]"></div>
     </div>
