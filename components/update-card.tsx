@@ -22,7 +22,9 @@ export default function UpdateCard({ update }: { update: UpdateProps }) {
         <CardDescription>
           Key Repo:
           {repo_url ? (
-            <Link href={repo_url}>{` ${repo_name}`}</Link>
+            <Link href={repo_url}>
+              <p className="hover:text-black inline">{` ${repo_name}`}</p>
+            </Link>
           ) : (
             repo_name
           )}

@@ -3,6 +3,7 @@
 import UpdateCard from "@/components/update-card";
 import { getUpdates } from "@/app/actions";
 import { UpdateProps } from "@/app/types";
+export const revalidate = 60;
 
 export default async function Journey() {
   const updates = await getUpdates();
