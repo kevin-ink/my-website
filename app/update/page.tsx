@@ -41,8 +41,8 @@ export default function UpdateForm() {
       form.setError("root", { type: "manual", message: "Failed to submit." });
     } else {
       alert("Submitted successfully!");
+      form.reset();
     }
-    form.reset();
     setIsPending(false);
   }
 
