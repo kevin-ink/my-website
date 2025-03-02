@@ -38,7 +38,7 @@ export default function UpdateForm() {
     const error = await postUpdate(values);
     if (error) {
       console.log(error);
-      form.setError("root", { type: "manual", message: "Failed to submit." });
+      alert("Failed to submit form.");
     } else {
       alert("Submitted successfully!");
       form.reset();
