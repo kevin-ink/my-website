@@ -1,5 +1,3 @@
-"use server";
-
 import UpdateCard from "@/components/update-card";
 import { getUpdates } from "@/app/actions";
 import { UpdateProps } from "@/app/types";
