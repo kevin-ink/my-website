@@ -12,10 +12,10 @@ export default function Pitch() {
         <p className="inline animate-[blink_1s_infinite]">|</p>
       </h1>
       <p className="mt-1 text-black">
-        &emsp;Software developer eager to bring innovative ideas to life. Strong
-        proficiency in full-stack technologies. Seeking my first entry-level
-        role to grow and contribute to impactful projects. Follow my journey
-        below!
+        &emsp;Software developer eager to contribute to bringing software
+        solutions to life. Strong proficiency in full-stack technologies.
+        Seeking my first entry-level role to grow as a software developer and
+        contribute to impactful projects.
       </p>
     </div>
   );

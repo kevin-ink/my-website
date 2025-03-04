@@ -14,7 +14,13 @@ export default function Projects() {
           imgHeight={939}
           animatedUrl={"/urf_demo.gif"}
         />
-        <ProjectCard cardTitle="Digital Humanities Showcase Website" />
+        <ProjectCard
+          cardTitle="Digital Humanities Showcase Website"
+          cardImageUrl="/rikva.png"
+          imgWidth={1869}
+          imgHeight={939}
+          animatedUrl={"/rikva.gif"}
+        />
         <ProjectCard cardTitle="CoffeePls: a Platform for Coffee Enthusiasts" />
       </div>
       <p className="text-slate-300 text-center">

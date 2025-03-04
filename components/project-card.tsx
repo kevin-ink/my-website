@@ -30,9 +30,12 @@ export default function ProjectCard({
               className="rounded-lg group-hover:hidden"
             />
             {animatedUrl && (
-              <img
+              <Image
                 src={animatedUrl}
                 alt={cardTitle}
+                width={imgWidth}
+                height={imgHeight}
+                unoptimized
                 className="rounded-lg group-hover:block hidden"
               />
             )}
