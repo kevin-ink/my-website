@@ -12,12 +12,12 @@ export interface UpdateProps {
 
 export const formSchema = z
   .object({
-    task: z.string().min(3).max(200),
-    next_steps: z.string().min(3).max(200),
-    repo: z.string().max(200),
-    repo_url: z.string().max(200),
-    work_done: z.string().min(3).max(200),
-    password: z.string().min(8).max(200),
+    task: z.string().min(3).max(500),
+    next_steps: z.string().min(3).max(500),
+    repo: z.string().max(50),
+    repo_url: z.string().max(2048),
+    work_done: z.string().min(3).max(500),
+    password: z.string().min(8).max(100),
   })
   .refine(
     (data) =>
