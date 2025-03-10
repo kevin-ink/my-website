@@ -13,6 +13,7 @@ export default function Projects() {
           imgWidth={1869}
           imgHeight={939}
           animatedUrl={"/urf_demo.gif"}
+          url="https://kevin-ink.github.io/urf"
         />
         <ProjectCard
           cardTitle="Digital Humanities Showcase Website"
@@ -20,8 +21,16 @@ export default function Projects() {
           imgWidth={1869}
           imgHeight={939}
           animatedUrl={"/rikva.gif"}
+          url="https://rikva.vercel.app"
         />
-        <ProjectCard cardTitle="CoffeePls: a Platform for Coffee Enthusiasts" />
+        <ProjectCard
+          cardTitle="CoffeePls: Platform Proof of Concept"
+          cardImageUrl="/coffeepls.png"
+          imgWidth={1869}
+          imgHeight={939}
+          animatedUrl={"/coffeepls.png"}
+          url={"https://github.com/kevin-ink/coffeepls"}
+        />
       </div>
       <p className="text-slate-300 text-center">
         Check out more of my projects over at my Github!
