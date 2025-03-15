@@ -36,17 +36,20 @@ export default function Journey() {
         until I land my entry role.
       </p>
       <div className="flex flex-col gap-y-2 items-center">
-        {updates.slice((page - 1) * 3, page * 3).map((update) => (
-          <div key={update.id} className="w-full">
-            <UpdateCard update={update as UpdateProps} />
-          </div>
-        ))}
-        <Pagination className="text-black bg-slate-400 mt-auto rounded w-fit p-1">
+        <Pagination className="text-black bg-slate-400 rounded w-fit p-1">
           <PaginationContent>
             <PaginationItem>
               <PaginationPrevious
-                href="#journey"
-                className="hover:cursor-pointer"
+                className={`${
+                  page !== 1
+                    ? "hover:cursor-pointer"
+                    : "text-black/25 hover:cursor-default hover:bg-transparent hover:text-black/25"
+                }`}
+                onClick={() => {
+                  if (page > 1) {
+                    setPage(page - 1);
+                  }
+                }}
               />
             </PaginationItem>
             {[...Array(Math.ceil(updates.length / 3)).keys()].map((index) => {
@@ -57,7 +60,6 @@ export default function Journey() {
                     isActive={page === pageNumber}
                     onClick={() => setPage(pageNumber)}
                     className="hover:cursor-pointer"
-                    href="#journey"
                   >
                     {pageNumber}
                   </PaginationLink>
@@ -66,12 +68,25 @@ export default function Journey() {
             })}
             <PaginationItem>
               <PaginationNext
-                className="hover:cursor-pointer"
-                href="#journey"
+                className={`${
+                  page < Math.ceil(updates.length / 3)
+                    ? "hover:cursor-pointer"
+                    : "text-black/25 hover:cursor-default hover:bg-transparent hover:text-black/25"
+                }`}
+                onClick={() => {
+                  if (page < Math.ceil(updates.length / 3)) {
+                    setPage(page + 1);
+                  }
+                }}
               />
             </PaginationItem>
           </PaginationContent>
         </Pagination>
+        {updates.slice((page - 1) * 3, page * 3).map((update) => (
+          <div key={update.id} className="w-full">
+            <UpdateCard update={update as UpdateProps} />
+          </div>
+        ))}
       </div>
     </div>
   );
