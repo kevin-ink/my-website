@@ -39,7 +39,7 @@ export async function getUpdates() {
   const updates = await sql`
         SELECT * FROM updates
         ORDER BY date DESC
-        LIMIT 5
+        
     `;
   return updates;
 }
