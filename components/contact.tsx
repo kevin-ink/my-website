@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 export default function Contact() {
   return (
     <div className="h-auto mb-10 mx-auto w-11/12 xl:w-7/12 2xl:w-6/12 flex flex-col items-center">
@@ -10,6 +13,27 @@ export default function Contact() {
       >
         kevinsli0902@gmail.com
       </a>
+      <div className="flex flex-row gap-x-2 text-slate-300 text-2xl mt-8 items-center">
+        <Link href="https://github.com/kevin-ink">
+          <Image
+            className="h-10 w-auto hover:scale-110 transition-all duration-300 ease-in-out"
+            src="/Github_Logo_White.png"
+            alt="Github"
+            width="1920"
+            height="1080"
+          />
+        </Link>
+        <span className="text-3xl mr-2">|</span>
+        <Link href="hhttps://www.linkedin.com/in/kevin-li-519465356/">
+          <Image
+            className="h-9 w-auto hover:scale-110 transition-all duration-300 ease-in-out"
+            src="/InBug-White.png"
+            alt="Github"
+            width="1920"
+            height="1080"
+          />
+        </Link>
+      </div>
     </div>
   );
 }
