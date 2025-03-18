@@ -13,7 +13,7 @@ export default function Contact() {
       >
         kevinsli0902@gmail.com
       </a>
-      <div className="flex flex-row gap-x-2 text-slate-300 text-2xl mt-8 items-center justify-between">
+      <div className="flex flex-row gap-x-2 text-slate-300 text-2xl mt-8 items-center justify-between w-1/5">
         <Link href="https://github.com/kevin-ink">
           <Image
             className="h-10 w-auto hover:scale-110 transition-all duration-300 ease-in-out"
