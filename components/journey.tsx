@@ -1,5 +1,5 @@
 "use client";
-import UpdateCard from "@/components/update-card";
+// import UpdateCard from "@/components/update-card";
 import { getUpdates } from "@/app/actions";
 import { UpdateProps } from "@/app/types";
 import { useState, useEffect } from "react";
