@@ -68,7 +68,7 @@ export default function Navbar() {
         href="#journey"
         scroll
       >
-        my journey
+        my updates
       </Link>
     </div>
   );
