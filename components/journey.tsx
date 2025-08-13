@@ -82,11 +82,11 @@ export default function Journey() {
             </PaginationItem>
           </PaginationContent>
         </Pagination>
-        {updates.slice((page - 1) * 3, page * 3).map((update) => (
+        {/* {updates.slice((page - 1) * 3, page * 3).map((update) => (
           <div key={update.id} className="w-full">
             <UpdateCard update={update as UpdateProps} />
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );

@@ -21,15 +21,17 @@ export default function Contact() {
             alt="Github"
             width="1920"
             height="1080"
+            priority
           />
         </Link>
         <Link href="hhttps://www.linkedin.com/in/kevin-li-519465356/">
           <Image
             className="h-9 w-auto hover:scale-110 transition-all duration-300 ease-in-out"
             src="/InBug-White.png"
-            alt="Github"
+            alt="LinkedIn"
             width="1920"
             height="1080"
+            priority
           />
         </Link>
       </div>
